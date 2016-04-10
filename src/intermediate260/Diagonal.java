@@ -7,14 +7,9 @@ public class Diagonal {
 		System.out.println(x + y - gcd(x, y));
 	}
 
-	private static int gcd(int dividend, int divisor) {
-		int remainder = 0;
-		while (true) {
-			remainder = dividend % divisor;
-			if (remainder != 0)
-				return remainder;
-			dividend = divisor;
-			divisor = remainder;
-		}
+	public static int gcd(int x, int y) {
+		if (y == 0)
+			return x;
+		return gcd(y, x % y);
 	}
 }
